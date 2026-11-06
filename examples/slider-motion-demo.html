@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Slider interaction & easing — original offline demo</title>
+<style>
+:root{color-scheme:light dark;font-family:system-ui, sans-serif;background:#121318;color:#f6f6fa}
+*{box-sizing:border-box}body{max-width:900px;margin:0 auto;padding:clamp(16px,5vw,50px)}
+h1{font-size:clamp(26px,4vw,42px);line-height:1.1;margin-bottom:12px}p{max-width:67ch;color:#c6c7d2;line-height:1.55}
+section{border:1px solid #444653;border-radius:19px;background:#1a1c24;margin:22px 0;padding:22px}
+label{display:block;font-weight:700;margin-bottom:12px}output{font-variant-numeric:tabular-nums;color:#f5cce2}
+input[type=range]{display:block;width:100%;accent-color:#dc83b4;min-height:44px;cursor:pointer}
+input[type=range]:focus-visible,button:focus-visible{outline:3px solid #f4a3d0;outline-offset:4px}
+button{border:0;border-radius:12px;background:#e59ac7;color:#151018;padding:12px 19px;font-weight:700;cursor:pointer}
+.lane{margin:18px 0}.lane header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+.lane header small{color:#bfc1ce}.track{position:relative;height:30px;border-radius:20px;background:#2a2c36;overflow:hidden;border:1px solid #4b4d5b}
+.thumb{position:absolute;width:20px;height:20px;left:4px;top:4px;border-radius:50%;background:#f4a5cc;transform:translateX(0);box-shadow:0 0 0 2px #15161e}
+.note{font-size:13px;color:#bfc1ce}code{color:#ffc6e3}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+@media(forced-colors:active){.track{border:1px solid CanvasText}.thumb{background:Highlight}}
+</style></head><body>
+<h1>Slider: valore reale vs animazione</h1>
+<p>Durante il trascinamento il valore deve seguire immediatamente il dito o il mouse. Le curve sotto sono una <strong>dimostrazione visiva</strong> per transizioni programmatiche, non otto controlli di input.</p>
+<section><label for="amount">Volume <output id="value" for="amount">45%</output></label>
+<input id="amount" type="range" min="0" max="100" step="1" value="45" aria-describedby="slider-hint">
+<p class="note" id="slider-hint">Slider nativo: trascinamento immediato, frecce, Home ed End. Nessun easing sul valore.</p></section>
+<section><h2>Otto easing, solo per la visualizzazione</h2><p>Premi il pulsante per confrontare le traiettorie. Riduci le animazioni nelle impostazioni del sistema per verificare il fallback.</p>
+<button id="play" type="button">Riproduci le animazioni</button><div id="lanes"></div></section>
+<script>
+(()=>{ 'use strict';
+ const input=document.querySelector('#amount'),out=document.querySelector('#value');
+ input.addEventListener('input',()=>{out.value=input.value+'%';out.textContent=out.value});
+ const names=['Linear','Ease in','Ease out','Ease in-out','Overshoot','Elastic','Bounce','Steps'];
+ const tracks=[]; const root=document.querySelector('#lanes');
+ names.forEach(name=>{const wrap=document.createElement('div');wrap.className='lane';const head=document.createElement('header');const strong=document.createElement('strong');strong.textContent=name;const desc=document.createElement('small');desc.textContent='Visual preview';head.append(strong,desc);const track=document.createElement('div');track.className='track';track.setAttribute('aria-hidden','true');const dot=document.createElement('span');dot.className='thumb';track.append(dot);wrap.append(head,track);root.append(wrap);tracks.push({name,track,dot})});
+ const reduce=matchMedia('(prefers-reduced-motion: reduce)');let toEnd=false,animations=[];
+ function run(){animations.forEach(a=>a.cancel());animations=[];toEnd=!toEnd;
+  for(const {name,track,dot} of tracks){const max=Math.max(0,track.clientWidth-dot.offsetWidth-8),start=toEnd?0:max,end=toEnd?max:0;
+    dot.style.transform=`translateX(${start}px)`;
+    if(reduce.matches){dot.style.transform=`translateX(${end}px)`;continue}
+    const easings={'Linear':'linear','Ease in':'ease-in','Ease out':'ease-out','Ease in-out':'ease-in-out','Overshoot':'cubic-bezier(.24,1.08,.45,1)','Elastic':'ease-out','Bounce':'ease-out','Steps':'steps(6,end)'};
+    let points=[{transform:`translateX(${start}px)`},{transform:`translateX(${end}px)`}];
+    if(name==='Elastic')points=[{transform:`translateX(${start}px)`,offset:0},{transform:`translateX(${end+(start-end)*.13}px)`,offset:.65},{transform:`translateX(${end+(start-end)*.05}px)`,offset:.82},{transform:`translateX(${end}px)`,offset:1}];
+    if(name==='Bounce')points=[{transform:`translateX(${start}px)`,offset:0},{transform:`translateX(${end}px)`,offset:.7},{transform:`translateX(${end+(start-end)*.10}px)`,offset:.82},{transform:`translateX(${end}px)`,offset:1}];
+    const anim=dot.animate(points,{duration:840,easing:easings[name],fill:'forwards'});animations.push(anim);
+    anim.onfinish=()=>{dot.style.transform=`translateX(${end}px)`;anim.cancel()};
+  }
+ }
+ document.querySelector('#play').addEventListener('click',run);
+})();
+</script></body></html>

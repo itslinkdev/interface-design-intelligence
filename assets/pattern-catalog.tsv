@@ -1,0 +1,63 @@
+id	topic	tags	rule	module
+REF-001	Hick law	choices menu	Reduce and group decision options without hidden nesting	references/ux-principles.md
+REF-002	Jakob law	familiar patterns	Use established form/navigation conventions	references/ux-principles.md
+REF-003	Fitts law	touch targets	Place important large enough interaction targets conveniently	references/controls-navigation.md
+REF-004	Gestalt proximity grouped profile	grouping profile	Group related profile/settings fields	references/ux-principles.md
+REF-005	Miller chunking	chunking forms	Chunk dense form content into meaningful sections	references/ux-principles.md
+REF-006	Zeigarnik progress	onboarding progress	Expose resumable incomplete checklist progress	references/ux-principles.md
+REF-007	Pragnanz clean icons	gestalt icons	Prefer recognizable simple visual forms	references/ux-principles.md
+REF-008	Proximity grouped form	grouping fields	Use meaningful grouping over scattered form controls	references/ux-principles.md
+REF-009	Peak end rule	completion journey	Design clear and positive completion moments	references/ux-principles.md
+REF-010	Serial position	information ordering	Consider the salience of list beginning and end	references/ux-principles.md
+REF-011	Tesler complexity	defaults complexity	Move safe configuration complexity into sensible defaults	references/ux-principles.md
+REF-012	Aesthetic usability	polish perception aesthetic originality identity visual	Coherent aesthetic helps perceived usability but does not replace function	references/ux-principles.md
+REF-013	Pragnanz simplified visuals	gestalt simplicity	Prefer organized shapes over unnecessary visual complexity	references/ux-principles.md
+REF-014	Nested radius ratio comparison	nested corners	Harmonize outer and inner corner geometry; ratio not absolute	references/geometry-spacing.md
+REF-015	Explicit action labels	labels destructive	Specific action copy reduces ambiguous Yes or No prompts	references/forms-inputs.md
+REF-016	Visible selected state	selection	Make selections unmistakable beyond a tiny checkbox	references/feedback-states.md
+REF-017	Readable weights	font weights	Use legible body text weights and contrast	references/typography.md
+REF-018	Touch target 44	hit area	Aim for comfortable 44px touch targets; AA minimum differs	references/accessibility.md
+REF-019	Contextual status	upload status	Provide task status and helpful progress context	references/feedback-states.md
+REF-020	Color saturation per theme	light color	Tune color saturation per theme and check contrast	references/color-themes.md
+REF-021	Persistent field labels	placeholder label	Do not use placeholders as the only field label	references/forms-inputs.md
+REF-022	Input masks	mask date phone	Guide structured entry without breaking paste/locales	references/forms-inputs.md
+REF-023	Skeleton loading	skeleton loading	Use skeleton when content structure is predictable	references/feedback-states.md
+REF-024	Important values hierarchy	dashboard numeric	Prioritize key values through emphasis	references/visual-hierarchy.md
+REF-025	Semantic destructive color	danger buttons	Use danger styling for destructive actions	references/color-themes.md
+REF-026	OTP digit input	otp authentication	Present code entry clearly with paste and autofill support	references/forms-inputs.md
+REF-027	Search and scroll selection	combobox search	Enable search for long option lists	references/controls-navigation.md
+REF-028	Near black and off white	neutral surfaces	Consider near-black and off-white surfaces contextually	references/color-themes.md
+REF-029	Aligned form fields	form layout	Prefer consistent scan order and stacked labels when useful	references/forms-inputs.md
+REF-030	Balanced segmented widths	segmented width	Balance segment targets unless localized labels demand flexibility	references/geometry-spacing.md
+REF-031	Switch versus segmented choices	switch radio	Switch for on-off state; segments for options	references/controls-navigation.md
+REF-032	Required versus optional fields	optional labels	Mark rare optional fields clearly instead of overwhelming asterisks	references/forms-inputs.md
+REF-033	Product detail redesign overview	ecommerce redesign aesthetic composition refinement visual direction	Simplify purchasing hierarchy without losing key options	references/visual-hierarchy.md
+REF-034	Simplified product image panel	product image	Reduce image overlay clutter without hiding critical controls	references/visual-hierarchy.md
+REF-035	Product title price metadata hierarchy	product card	Elevate title price and relevant summary details	references/visual-hierarchy.md
+REF-036	Single clear purchase action	primary action ecommerce	Give purchase decision a clear primary action	references/visual-hierarchy.md
+REF-037	Inner radius formula	radius formula	Use inner radius approximated by outer minus inset	references/geometry-spacing.md
+REF-038	Body line height	line-height	Use a readable adaptable body line-height	references/typography.md
+REF-039	Modular typography scale	type scale design system tokens typography	Use coherent scale e.g. ratio 1.25 as starting point	references/typography.md
+REF-040	Spacing 4px scale	spacing tokens	Use consistent spacing tokens and coherent grids	references/geometry-spacing.md
+REF-041	Optical alignment	icon optical	Correct visually off-center geometric shapes	references/geometry-spacing.md
+REF-042	Contrast ratios	wcag contrast	Check applicable 4.5 to 1 text and 3 to 1 nontext contrast	references/accessibility.md
+REF-043	Ethical unsubscribe UX	dark patterns	No guilt-tripping or obstructed unsubscribes	references/ethical-ux.md
+REF-044	Group related form fields	form grouping	Organize forms by contact address and related meaning	references/forms-inputs.md
+REF-045	Specific field errors	validation errors	Show actionable feedback at the affected field	references/forms-inputs.md
+REF-046	One primary action hierarchy	primary action	Avoid equally strong competing CTAs in one decision	references/visual-hierarchy.md
+REF-047	Portfolio font examples	portfolio fonts brand aesthetic typography	Space Grotesk Manrope DM Sans are portfolio examples	references/typography.md
+REF-048	Storytelling font examples	editorial serif fonts	Merriweather Lora Playfair Display are editorial examples	references/typography.md
+REF-049	Gaming font examples	gaming display fonts	Orbitron Oxanium Rajdhani are gaming display examples	references/typography.md
+REF-050	Visual UI control state colors	focus hover disabled design system component state tokens	Distinguish default hover pressed focus disabled success error	references/feedback-states.md
+REF-051	Dark mode adaptation	dark light themes	Build a theme-specific palette not inverted colors	references/color-themes.md
+REF-052	Semantic feedback colors	success warning error	Use semantic status colors with text and icons	references/feedback-states.md
+REF-053	Color for UI hierarchy	color emphasis	Use deliberate accent emphasis to guide attention	references/color-themes.md
+REF-054	60 30 10 palette heuristic	palette proportions	Treat 60 30 10 as an optional compositional aid	references/color-themes.md
+REF-055	Visual consistency across UI	design consistency system tokens reusable components brand	Maintain connected colors typography spacing and styling	references/visual-hierarchy.md
+REF-056	Typography conveys tone	brand typography	Type styles set tone but must remain legible	references/typography.md
+REF-057	Visual hierarchy guide scanning	scan order visual identity aesthetic composition	Control hierarchy with size weight and contrast	references/visual-hierarchy.md
+REF-058	Navbar pattern examples	navbar active	Highlight current destination in navigation	references/controls-navigation.md
+REF-059	Slider control patterns	slider gauge thumb range drag easing	Use a native range input by default; update drag values immediately and animate only meaningful snap/target transitions	references/slider-interactions.md
+REF-060	Toast notification examples	toast notifications	Nonblocking concise and actionable status toasts	references/feedback-states.md
+REF-061	Tech and SaaS font examples	tech fonts saas design system typography brand	Inter Plus Jakarta Sans Space Grotesk tech examples	references/typography.md
+REF-062	Ecommerce font examples	ecommerce fonts	Inter Montserrat DM Sans ecommerce examples	references/typography.md

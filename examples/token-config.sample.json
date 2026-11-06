@@ -1,0 +1,12 @@
+{
+  "prefix": "ui",
+  "themes": {
+    "light": {"color-bg": "#ffffff", "color-fg": "#17202a", "color-surface": "#f5f6f8", "color-primary": "#254cdd", "color-border": "#c7cbd3"},
+    "dark": {"color-bg": "#101318", "color-fg": "#f1f3f7", "color-surface": "#1d222b", "color-primary": "#90a5ff", "color-border": "#525967"}
+  },
+  "tokens": {
+    "space-1": "4px", "space-2": "8px", "space-3": "12px", "space-4": "16px", "space-6": "24px",
+    "radius-sm": "6px", "radius-md": "12px", "radius-lg": "20px",
+    "font-body": "system-ui, sans-serif", "font-size-body": "1rem", "line-height-body": "1.5"
+  }
+}

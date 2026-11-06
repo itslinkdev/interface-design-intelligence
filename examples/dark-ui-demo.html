@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dark UI — semantic surfaces and tonal elevation</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,sans-serif;background:#101013;color:#f4f4f5}
+.page{max-width:1000px;margin:auto;padding:clamp(24px,5vw,64px)}h1{font-size:clamp(28px,5vw,48px);letter-spacing:-.04em;line-height:1.1;margin:0 0 12px}
+p{color:#bfc0ca;max-width:66ch}.kicker{color:#aaaaff;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:28px}.panel{border:1px solid #42424b;border-radius:22px;padding:24px;background:#19191d}.panel.raised{background:#25252b}
+.row{display:flex;gap:12px;align-items:center;justify-content:space-between}.title{font-weight:700;font-size:1.1rem}.small{font-size:.86rem;color:#bfc0ca}.panel p{margin:14px 0 24px}.status{font-size:.75rem;background:#303043;border:1px solid #595980;padding:4px 9px;border-radius:18px;color:#dedfff}
+button{font:inherit;border:0;border-radius:11px;padding:11px 16px;background:#aaaaff;color:#101013;font-weight:700;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #e2e5ff;outline-offset:3px}button:hover{background:#c8c8ff}
+label{display:flex;gap:10px;align-items:center;font-size:.9rem;color:#e1e1e8}input{accent-color:#aaaaff;width:18px;height:18px}
+.swatches{display:flex;gap:10px;flex-wrap:wrap;margin:27px 0}.swatch{min-width:124px;border:1px solid #42424b;border-radius:12px;padding:12px;font-size:.85rem}.swatch span{display:block;font-size:.7rem;color:#bfc0ca}
+footer{color:#bfc0ca;font-size:.84rem;padding-top:16px;border-top:1px solid #42424b}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.panel{padding:20px}}
+@media(prefers-reduced-motion:no-preference){button{transition:background-color .16s ease-out}}
+</style></head><body><main class="page"><div class="kicker">Original UI preview / dark-mode guide</div><h1>Depth without visual noise.</h1><p>Two functional elevations, restrained chroma, clear text hierarchy and focus styles. These are example tokens — measure contrast against each rendered surface.</p>
+<div class="swatches"><div class="swatch" style="background:#0e0e10">Canvas<span>#0E0E10</span></div><div class="swatch" style="background:#19191d">Surface<span>#19191D</span></div><div class="swatch" style="background:#25252b">Raised<span>#25252B</span></div></div>
+<div class="grid"><section class="panel" aria-label="Base surface example"><div class="row"><div class="title">Account</div><span class="status">Active</span></div><p>Important options stay readable without maximum brightness on every line.</p><label><input type="checkbox" checked> Email notifications</label></section>
+<section class="panel raised" aria-label="Raised surface example"><div class="row"><div class="title">Security review</div><span class="small">Elevated</span></div><p>Additional surface contrast makes this panel distinct without relying on a large shadow.</p><button type="button">Review settings</button></section></div>
+<footer>Offline CSS-only example. Uses original markup and no external fonts, scripts, screenshots or assets. The theme and colors are illustrative, not universally prescribed.</footer></main></body></html>

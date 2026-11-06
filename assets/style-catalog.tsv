@@ -1,0 +1,6 @@
+id	name	aliases	best_for	file
+STYLE-01	Liquid Glass	glass glassmorphism translucent frosted blur acrylic liquid ios toolbar navigation panels overlays	floating controls navigation compact toolbars	styles/liquid-glass.md
+STYLE-02	Analog Grain	grain noise analog textured texture retro warm tactile orange gradients poster	poster backgrounds editorial hero surfaces	styles/analog-grain.md
+STYLE-03	Chrome Typography	chrome chrome type y2k silver metallic reflection metal glossy	logo typography large display headings	styles/chrome-typography.md
+STYLE-04	Pixel Accents	pixel pixelart pixels 8bit pixelated cursor digital retro badge	ui details stickers small decorative icons	styles/pixel-accents.md
+STYLE-05	Editorial Serifs	editorial serif serifs magazine quiet luxury publication newspaper typography premium	quiet luxury premium headlines editorial pages	styles/editorial-serifs.md
